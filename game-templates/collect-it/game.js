@@ -1,3 +1,28 @@
+// Function to hide loading overlay
+function hideLoadingOverlay() {
+  const overlay = document.getElementById("loading-overlay");
+  if (overlay) {
+    overlay.classList.add("fade-out");
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 500);
+  }
+
+  // Show controls
+  const controls = document.getElementById("controls");
+  if (controls) {
+    controls.style.display = "flex";
+  }
+}
+
+// Hide controls initially
+document.addEventListener("DOMContentLoaded", function() {
+  const controls = document.getElementById("controls");
+  if (controls) {
+    controls.style.display = "none";
+  }
+});
+
 // game.js - Collect It (Snake-style) Game Template
 
 // Utility to load images asynchronously
@@ -117,8 +142,12 @@ class Game {
       // Handle window resize
       window.addEventListener('resize', this.handleResize.bind(this));
 
+      // Hide loading overlay
+      hideLoadingOverlay();
+
       // Start the game loop
       this.startGameLoop();
+
     } catch (error) {
       console.error('Error initializing game:', error);
     }
@@ -380,7 +409,7 @@ class Game {
 
   restart() {
     this.setup();
-    this.startGameLoop();
+    this.this.startGameLoop();
   }
 
   // Separate resize handler method for debouncing
