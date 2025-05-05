@@ -1,0 +1,75 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+}
+
+/* Game container to enforce aspect ratio */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#gameCanvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid #555;
+  touch-action: none;
+}
+
+#controls {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0;
+  background-color: #333;
+  border-top: 1px solid #555;
+}
+
+#controls button {
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #888;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+}
+
+#controls button:active {
+  background-color: #777;
+}
+
+.vertical-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-buttons button {
+  margin: 2px 5px;
+}
